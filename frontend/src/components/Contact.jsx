@@ -82,21 +82,21 @@ const ContactPage = () => {
                             </div>
                         </div>
 
-                                            {/* Resume Download Section */}
-                    <div className="bg-white rounded-xl shadow-lg p-6">
-                        <h2 className="text-2xl font-semibold mb-6">Resume</h2>
-                        <div className="text-center">
-                            <a
-                                href="https://drive.google.com/file/d/11Bs1gcoKtiV--1SnJ9R7CvQQNr_i04Ce/view?usp=sharing"
-                                download
-                                className="inline-flex items-center gap-2 bg-blue-500 text-white px-8 py-4 rounded-lg
+                        {/* Resume Download Section */}
+                        <div className="bg-white rounded-xl shadow-lg p-6">
+                            <h2 className="text-2xl font-semibold mb-6">Resume</h2>
+                            <div className="text-center">
+                                <a
+                                    href="https://drive.google.com/file/d/11Bs1gcoKtiV--1SnJ9R7CvQQNr_i04Ce/view?usp=sharing"
+                                    download
+                                    className="inline-flex items-center gap-2 bg-blue-500 text-white px-8 py-4 rounded-lg
                                              hover:bg-blue-600 transition-colors duration-300 text-lg"
-                            >
-                                <FileDown className="w-6 h-6" />
-                                Download Resume
-                            </a>
+                                >
+                                    <FileDown className="w-6 h-6" />
+                                    Download Resume
+                                </a>
+                            </div>
                         </div>
-                    </div>
                     </div>
 
                     {/* Social Links */}
