@@ -49,7 +49,7 @@ const ProjectShowcase = () => {
     };
 
     return (
-        <div className="w-full max-w-7xl mx-auto px-4 py-8">
+        <div id="work" className="w-full max-w-7xl mx-auto px-4 py-8" style={{ marginBottom: '10rem' }}>
             <div className="relative">
                 <div className="flex gap-6 transition-all duration-300">
                     {visibleProjects().map((project, index) => (

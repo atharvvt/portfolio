@@ -50,7 +50,7 @@ const ContactPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gray-50 p-8">
+        <div id="contact" className="min-h-screen bg-gray-50 p-8">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">

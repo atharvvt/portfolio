@@ -33,10 +33,9 @@ const Header = () => {
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-8">
                             {[
-                                ['Home', '#home'],
-                                ['About', '#about'],
                                 ['Skills', '#skills'],
-                                ['Contact', '#contact']
+                                ['Work', '#work'],
+                                ['Contact', '#contact'],
                             ].map(([name, url]) => (
                                 <a
                                     key={name}

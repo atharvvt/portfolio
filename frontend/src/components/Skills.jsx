@@ -10,12 +10,12 @@ const SkillsShowcase = () => {
                 {
                     name: "React",
                     description: "Component development, Hooks, State management",
-                    level: "Advanced"
+                    level: "Intermediate"
                 },
                 {
                     name: "JavaScript",
                     description: "ES6+, DOM manipulation, Async programming",
-                    level: "Advanced"
+                    level: "Intermediate"
                 },
                 {
                     name: "CSS/Tailwind",
@@ -36,7 +36,7 @@ const SkillsShowcase = () => {
                 {
                     name: "Django",
                     description: "REST Framework, Authentication, ORM",
-                    level: "Advanced"
+                    level: "Intermediate"
                 }
             ]
         },
@@ -46,7 +46,12 @@ const SkillsShowcase = () => {
             items: [
                 {
                     name: "PostgreSQL",
-                    description: "Query optimization, Data modeling, Indexing",
+                    description: "Creating Tables, Data modeling, Indexing",
+                    level: "Intermediate"
+                },
+                {
+                    name: "MySQL",
+                    description: "Query optimization, Creating Tables, Data modeling",
                     level: "Intermediate"
                 }
             ]
@@ -54,7 +59,7 @@ const SkillsShowcase = () => {
     ];
 
     return (
-        <div className="max-w-4xl mx-auto py-12 px-4">
+        <div id="skills" className="max-w-4xl mx-auto py-12 px-4" style={{ marginBottom: '10rem' }}>
             <h1 className="text-3xl font-bold mb-8 text-center">Skills & Expertise</h1>
 
             <div className="space-y-8">
@@ -89,15 +94,6 @@ const SkillsShowcase = () => {
                         </div>
                     </div>
                 ))}
-            </div>
-
-            <div className="mt-8 text-center">
-                <a 
-                    href="#projects" 
-                    className="inline-flex items-center gap-2 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors"
-                >
-                    View My Projects
-                </a>
             </div>
         </div>
     );

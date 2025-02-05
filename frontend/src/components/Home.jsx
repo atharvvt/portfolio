@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <section className="min-h-full bg-gradient-to-br from-gray-50 to-gray-100 py-12">
+        <section className="min-h-full bg-gradient-to-br from-gray-50 to-gray-100 py-12" style={{ marginBottom: '5rem' }}>
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
                 {/* Left Column - Text Content */}
                 <div className="space-y-4 text-center lg:text-left">
