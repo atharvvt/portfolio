@@ -1,102 +1,65 @@
-import React from 'react';
-import { Code, GitBranch, Database } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import api from '../api'
+
 
 const SkillsShowcase = () => {
-    const skills = [
-        {
-            category: "Frontend",
-            icon: <Code className="w-5 h-5" />,
-            items: [
-                {
-                    name: "React",
-                    description: "Component development, Hooks, State management",
-                    level: "Intermediate"
-                },
-                {
-                    name: "JavaScript",
-                    description: "ES6+, DOM manipulation, Async programming",
-                    level: "Intermediate"
-                },
-                {
-                    name: "CSS/Tailwind",
-                    description: "Responsive design, Modern layouts, Animations",
-                    level: "Intermediate"
-                }
-            ]
-        },
-        {
-            category: "Backend",
-            icon: <GitBranch className="w-5 h-5" />,
-            items: [
-                {
-                    name: "Python",
-                    description: "Data structures, OOP, Standard library",
-                    level: "Advanced"
-                },
-                {
-                    name: "Django",
-                    description: "REST Framework, Authentication, ORM",
-                    level: "Intermediate"
-                }
-            ]
-        },
-        {
-            category: "Database",
-            icon: <Database className="w-5 h-5" />,
-            items: [
-                {
-                    name: "PostgreSQL",
-                    description: "Creating Tables, Data modeling, Indexing",
-                    level: "Intermediate"
-                },
-                {
-                    name: "MySQL",
-                    description: "Query optimization, Creating Tables, Data modeling",
-                    level: "Intermediate"
-                }
-            ]
-        }
-    ];
 
-    return (
-        <div id="skills" className="max-w-4xl mx-auto py-12 px-4" style={{ marginBottom: '10rem' }}>
-            <h1 className="text-3xl font-bold mb-8 text-center">Skills & Expertise</h1>
+  const [skills, setSkills] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-            <div className="space-y-8">
-                {skills.map((category, idx) => (
-                    <div key={idx} className="bg-white rounded-lg shadow p-6">
-                        <div className="flex items-center gap-2 mb-4">
-                            <div className="p-2 bg-blue-50 rounded-lg">
-                                {category.icon}
-                            </div>
-                            <h2 className="text-xl font-semibold">{category.category}</h2>
-                        </div>
 
-                        <div className="space-y-4">
-                            {category.items.map((skill, skillIdx) => (
-                                <div 
-                                    key={skillIdx} 
-                                    className="border-l-4 border-blue-500 pl-4 py-1"
-                                >
-                                    <div className="flex justify-between items-start">
-                                        <div>
-                                            <h3 className="font-medium">{skill.name}</h3>
-                                            <p className="text-sm text-gray-600 mt-1">
-                                                {skill.description}
-                                            </p>
-                                        </div>
-                                        <span className="text-sm text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
-                                            {skill.level}
-                                        </span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+
+  useEffect(() => { 
+    const fetchSkills = async () => {
+      try {
+        const response = await api.get('/api/skills/');
+        setSkills(response.data);
+        console.log(response)
+      }
+      catch (error) {
+        console.error('error fetching data', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchSkills();
+  }, [])
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  // const skills = [
+  //   { name: "React", level: "Intermediate" },
+  //   { name: "JavaScript", level: "Intermediate" },
+  //   { name: "CSS/Tailwind", level: "Intermediate" },
+  //   { name: "Python", level: "Advanced" },
+  //   { name: "Django", level: "Intermediate" },
+  //   { name: "PostgreSQL", level: "Intermediate" },
+  //   { name: "MySQL", level: "Intermediate" }
+  // ];
+
+
+
+  return (
+    <div className="max-w-4xl mx-auto py-16 px-4" style={{ marginBottom: '10rem' }}>
+      <h2 className="text-3xl font-bold text-center mb-12">Skills</h2>
+
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {skills.map((skill) => (
+          <div
+            key={skill.name}
+            className="group bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-all duration-200 flex items-center justify-between"
+          >
+            <span className="font-medium text-gray-800">{skill.name}</span>
+            <span className="text-sm px-3 py-1 rounded-full bg-blue-50 text-blue-600 group-hover:bg-blue-100 transition-colors">
+              {skill.level}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default SkillsShowcase;
