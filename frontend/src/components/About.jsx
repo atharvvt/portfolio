@@ -10,7 +10,7 @@ const About = () => {
                 </div>
                 <div>
                     <h2 className="about-subtitle">I'm Atharv</h2>
-                    <p className="about-text">As a passionate Python Developer and Frontend Developer, I thrive on creating visually appealing and user-friendly websites. My journey in web design began with a fascination for how design can enhance user experience.</p>
+                    <p className="about-text">As a dedicated Python and Frontend Developer, I specialize in creating user-friendly websites and developing innovative software solutions that solve real-world problems. I thrive on transforming ideas into functional and visually appealing applications, combining technical expertise with creativity.</p>
                 </div>
             </div>
         </section>

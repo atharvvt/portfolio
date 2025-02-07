@@ -55,8 +55,7 @@ const Home = () => {
   return {
     name: 'Atharv',
     skills: ['React', 'Python', 'JavaScript'],
-    passion: 'Building amazing web apps',
-    coffee: true
+    passion: 'Creating Solutions, One Line at a Time.',
   }
 }`}</code>
                             </pre>
